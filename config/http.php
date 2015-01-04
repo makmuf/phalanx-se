@@ -3,5 +3,5 @@
 return [
     Phalanx\Router\RouterServiceProvider::class,
     Phalanx\Template\TwigServiceProvider::class,
-    CloudOffice\Http\HttpLayerServiceProvider::class,
+    App\Http\HttpLayerServiceProvider::class,
 ];

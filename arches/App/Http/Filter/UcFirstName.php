@@ -1,4 +1,4 @@
-<?php namespace CloudOffice\Http\Filter;
+<?php namespace App\Http\Filter;
 
 use Phalanx\Contracts\View\ViewModel;
 use Phalanx\Router\Filter;

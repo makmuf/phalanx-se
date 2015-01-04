@@ -1,4 +1,4 @@
-<?php namespace CloudOffice\Http\ViewModels;
+<?php namespace App\Http\ViewModels;
 
 use Phalanx\Contracts\View\ViewModel;
 use Symfony\Component\HttpFoundation\Response;

@@ -2,5 +2,5 @@
 
 return [
     PhalanxSDK\PhalanxSDKServiceProvider::class,
-    CloudOffice\Console\ConsoleServiceProvider::class,
+    App\Console\ConsoleServiceProvider::class,
 ];

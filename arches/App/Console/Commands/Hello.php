@@ -1,4 +1,4 @@
-<?php namespace CloudOffice\Console\Commands;
+<?php namespace App\Console\Commands;
 
 use Phalanx\Contracts\Hash;
 use Symfony\Component\Console\Command\Command;

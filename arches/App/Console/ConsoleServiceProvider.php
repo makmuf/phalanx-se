@@ -1,6 +1,6 @@
-<?php namespace CloudOffice\Console;
+<?php namespace App\Console;
 
-use CloudOffice\Console\Commands\Hello;
+use App\Console\Commands\Hello;
 use Phalanx\BCryptHasher\Command\Generate;
 use Phalanx\Console\Kernel;
 use Phalanx\Console\KernelServiceProvider;

@@ -1,4 +1,4 @@
-<?php namespace CloudOffice\Http\Controller;
+<?php namespace App\Http\Controller;
 
 use Phalanx\Router\RouteParameters;
 use Phalanx\Template\View;

@@ -1,7 +1,7 @@
-<?php namespace CloudOffice\Http;
+<?php namespace App\Http;
 
-use CloudOffice\Http\Controller\Home;
-use CloudOffice\Http\Filter\UcFirstName;
+use App\Http\Controller\Home;
+use App\Http\Filter\UcFirstName;
 use Phalanx\Contracts\Router\Router;
 use Phalanx\ErrorHandler\ErrorHandling;
 use Phalanx\Foundation\Phalanx;
