@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "CloudOffice\\": "src/CloudOffice"
+            "App\\": "arches/App"
         }
     },
     "license": "MIT",
