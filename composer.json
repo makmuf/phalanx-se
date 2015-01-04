@@ -1,5 +1,5 @@
 {
-    "name": "phalanx/phalanx",
+    "name": "phalanx/standard-edition",
     "description": "Http Layer",
     "require": {
         "php": ">=5.5",
