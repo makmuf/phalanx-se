@@ -1,0 +1,77 @@
+<?php namespace CloudOffice\Http;
+
+use CloudOffice\Http\Controller\Home;
+use CloudOffice\Http\Filter\UcFirstName;
+use Phalanx\Contracts\Router\Router;
+use Phalanx\ErrorHandler\ErrorHandling;
+use Phalanx\Foundation\Phalanx;
+use Phalanx\Http\HandleEvent;
+use Phalanx\Http\HttpException;
+use Phalanx\Http\Kernel;
+use Phalanx\Http\KernelServiceProvider;
+use Phalanx\Router\Routing;
+use Phalanx\Template\View;
+use Psr\Log\LoggerInterface;
+
+class HttpLayerServiceProvider extends KernelServiceProvider {
+
+    use Routing, ErrorHandling;
+
+    /**
+     * @param Router $router
+     * @return void
+     */
+    protected function routing(Router $router)
+    {
+        $router->get('/[:name]?', 'home')
+            ->then(new UcFirstName)
+            ->then(Home::class, 'index')
+        ;
+    }
+
+    /**
+     * @param \Exception $exception
+     * @return View
+     */
+    protected function error(\Exception $exception)
+    {
+        /**@var LoggerInterface $logger*/
+        $logger = $this->phalanx->make(LoggerInterface::class);
+        $logger->error(
+            $exception->getMessage(),
+            $exception->getTrace()
+        );
+
+        return new View('error', [], 500);
+    }
+
+    /**
+     * @param HttpException $exception
+     * @return View
+     */
+    protected function notFound(HttpException $exception)
+    {
+        /**@var LoggerInterface $logger*/
+        $logger = $this->phalanx->make(LoggerInterface::class);
+        $logger->notice(
+            $exception->getMessage(),
+            $exception->getTrace()
+        );
+
+        return new View('notfound', [], 404);
+    }
+
+    protected function bootingAccessLogger(Kernel $kernel, Phalanx $phalanx)
+    {
+        $kernel->onHandle(function(HandleEvent $event) use ($phalanx)
+        {
+            $phalanx
+                ->make(LoggerInterface::class)
+                ->info('Request', [
+                    $event->request()->getClientIp(),
+                    $event->request()->getRealMethod(),
+                    $event->request()->getUri()
+                ]);
+        });
+    }
+}

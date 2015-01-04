@@ -1,0 +1,35 @@
+{
+    "name": "phalanx/phalanx",
+    "description": "Http Layer",
+    "require": {
+        "php": ">=5.5",
+        "phalanx/bcrypt-hasher": "dev-master",
+        "phalanx/config": "dev-master",
+        "phalanx/console": "dev-master",
+        "phalanx/contracts": "dev-master",
+        "phalanx/db": "dev-master",
+        "phalanx/foundation": "dev-master",
+        "phalanx/http": "dev-master",
+        "phalanx/log": "dev-master",
+        "phalanx/phalanx-sdk": "dev-master",
+        "phalanx/router": "dev-master",
+        "phalanx/std-lib": "dev-master",
+        "phalanx/template": "dev-master"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.*@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "CloudOffice\\": "src/CloudOffice"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rikky",
+            "email": "son.levuthai@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
