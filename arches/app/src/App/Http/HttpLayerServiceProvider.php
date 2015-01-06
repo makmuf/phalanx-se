@@ -2,6 +2,7 @@
 
 use App\Http\Controller\Home;
 use App\Http\Filter\UcFirstName;
+use Phalanx\Booting\EarlyBootServiceProvider;
 use Phalanx\Contracts\Router\Router;
 use Phalanx\ErrorHandler\ErrorHandling;
 use Phalanx\Http\HttpException;
@@ -10,7 +11,7 @@ use Phalanx\Router\Routing;
 use Phalanx\Template\View;
 use Psr\Log\LoggerInterface;
 
-class HttpLayerServiceProvider extends KernelServiceProvider {
+class HttpLayerServiceProvider extends EarlyBootServiceProvider {
 
     use Routing, ErrorHandling;
 

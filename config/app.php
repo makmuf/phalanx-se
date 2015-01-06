@@ -2,10 +2,10 @@
 
 return [
 
-    'debug'     => false,
+    'debug'     => true,
 
     'template'  => [
-        'cache' => true
+        'cache' => false
     ],
 
     'hash'      => [

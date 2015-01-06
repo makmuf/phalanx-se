@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "arches/app/App"
+            "App\\": "arches/app/src/App"
         }
     },
     "license": "MIT",
