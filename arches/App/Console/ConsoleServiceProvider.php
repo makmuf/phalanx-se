@@ -13,9 +13,9 @@ class ConsoleServiceProvider extends KernelServiceProvider {
         /** @var Kernel $kernel */
         $kernel = $this->phalanx->make(ConsoleKernel::class);
 
-        $kernel->registerCommands([
-            Generate::class,
-            Hello::class
+        $kernel->groupPipeline([
+            $this->phalanx->make(Generate::class),
+            $this->phalanx->make(Hello::class),
         ]);
     }
 

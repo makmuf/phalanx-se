@@ -60,18 +60,4 @@ class HttpLayerServiceProvider extends KernelServiceProvider {
 
         return new View('notfound', [], 404);
     }
-
-    protected function bootingAccessLogger(Kernel $kernel, Phalanx $phalanx)
-    {
-        $kernel->onHandle(function(HandleEvent $event) use ($phalanx)
-        {
-            $phalanx
-                ->make(LoggerInterface::class)
-                ->info('Request', [
-                    $event->request()->getClientIp(),
-                    $event->request()->getRealMethod(),
-                    $event->request()->getUri()
-                ]);
-        });
-    }
 }
