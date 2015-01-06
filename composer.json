@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "arches/App"
+            "App\\": "arches/app/App"
         }
     },
     "license": "MIT",
@@ -35,7 +35,7 @@
     "scripts": {
         "post-install-cmd": [
             "php bin/falanx key:generate",
-            "echo \"<?php require_once __DIR__ . '/vendor/autoload.php'; \""
+            "echo \"<?php require_once __DIR__ . '/vendor/autoload.php'; \" > ./autoload.php"
         ]
     }
 }
