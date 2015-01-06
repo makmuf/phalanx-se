@@ -13,5 +13,5 @@ return [
         'salt'  => false
     ],
 
-    'key'       => '$2y$10$alVQg7izkmqO2H5d491OsemhzP9.2oWdKQMOxeHO08ThFxegSwN7O'
+    'key'       => '$2y$10$dQrScmiRoF2r9cjIxFxm3eE1RFF1KNO9Payf/oJMrODHx2xoB1QPW'
 ];
