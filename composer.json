@@ -1,6 +1,6 @@
 {
     "name": "phalanx/standard-edition",
-    "description": "Http Layer",
+    "description": "Phalanx Standard Edition. Skeleton for a Phalanx web application",
     "require": {
         "php": ">=5.5",
         "phalanx/bcrypt-hasher": "dev-master",
