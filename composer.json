@@ -31,5 +31,11 @@
             "email": "son.levuthai@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "scripts": {
+        "post-install-cmd": [
+            "php bin/falanx key:generate",
+            "echo \"<?php require_once __DIR__ . '/vendor/autoload.php'; \""
+        ]
+    }
 }
