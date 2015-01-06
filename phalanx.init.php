@@ -5,6 +5,6 @@ use Phalanx\Foundation\Phalanx;
 
 const PHALANX_ROOT = __DIR__;
 
-Container::setInstance($phalanx  = new Phalanx);
+Container::setInstance($phalanx  = new Phalanx(__DIR__ . '/manifest.yaml'));
 
 return $phalanx;
