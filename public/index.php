@@ -10,14 +10,9 @@ use Symfony\Component\HttpFoundation\Request;
  * @var Phalanx $phalanx
  */
 
-$commonServices = require __DIR__ . '/../config/services.php';
-$httpServices   = require __DIR__ . '/../config/http.php';
-
-$phalanx->loadProviders(array_merge($commonServices, $httpServices));
-
-
 $phalanx->bindShared(Request::class, function() { return Request::createFromGlobals();});
 
+$phalanx->boot('http');
 
 /** @var HttpKernel $kernel */
 $kernel     = $phalanx->make(HttpKernel::class);

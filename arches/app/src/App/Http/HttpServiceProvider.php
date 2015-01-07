@@ -10,7 +10,7 @@ use Phalanx\Router\Routing;
 use Phalanx\Template\View;
 use Psr\Log\LoggerInterface;
 
-class HttpLayerServiceProvider extends EarlyBootServiceProvider {
+class HttpServiceProvider extends EarlyBootServiceProvider {
 
     use Routing, ErrorHandling;
 

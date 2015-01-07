@@ -3,8 +3,6 @@
 use Illuminate\Container\Container;
 use Phalanx\Foundation\Phalanx;
 
-const PHALANX_ROOT = __DIR__;
-
-Container::setInstance($phalanx  = new Phalanx(__DIR__ . '/manifest.yaml'));
+Container::setInstance($phalanx  = new Phalanx(require_once __DIR__ . '/config/config.php'));
 
 return $phalanx;

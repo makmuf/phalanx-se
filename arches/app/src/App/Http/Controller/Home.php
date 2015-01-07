@@ -15,6 +15,6 @@ class Home {
      */
     public function index(RouteParameters $parameters)
     {
-        return new View('hello', ['name' => $parameters->get('name', 'World')]);
+        return 'Hello ' . $parameters->get('name', 'World');
     }
 }
