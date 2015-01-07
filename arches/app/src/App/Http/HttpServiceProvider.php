@@ -6,7 +6,6 @@ use Phalanx\Booting\EarlyBootServiceProvider;
 use Phalanx\Contracts\Router\Router;
 use Phalanx\ErrorHandler\ErrorHandling;
 use Phalanx\Http\HttpException;
-use Phalanx\Http\KernelServiceProvider;
 use Phalanx\Router\Routing;
 use Phalanx\Template\View;
 use Psr\Log\LoggerInterface;
