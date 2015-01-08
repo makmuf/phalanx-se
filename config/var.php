@@ -2,8 +2,6 @@
 
 return [
 
-    'key'       => 'this is not secure',
-
     'env'       => 'production',
 
     'debug'     => false,
