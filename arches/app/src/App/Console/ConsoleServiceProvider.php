@@ -2,11 +2,11 @@
 
 use App\Console\Commands\Hello;
 use Phalanx\BCryptHasher\Command\Generate;
+use Phalanx\Booting\EarlyBootServiceProvider;
 use Phalanx\Console\Kernel;
-use Phalanx\Console\KernelServiceProvider;
 use Phalanx\Contracts\Console\ConsoleKernel;
 
-class ConsoleServiceProvider extends KernelServiceProvider {
+class ConsoleServiceProvider extends EarlyBootServiceProvider {
 
     public function boot()
     {
