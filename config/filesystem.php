@@ -2,6 +2,4 @@
 
 return [
 
-    'arches/app',
-
 ];

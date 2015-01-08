@@ -3,6 +3,6 @@
 use Illuminate\Container\Container;
 use Phalanx\Foundation\Phalanx;
 
-Container::setInstance($phalanx  = new Phalanx(require_once __DIR__ . '/config/config.php'));
+Container::setInstance($phalanx  = new Phalanx(__DIR__ . '/config'));
 
 return $phalanx;
