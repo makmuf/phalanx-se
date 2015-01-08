@@ -8,6 +8,5 @@ return [
 
     Phalanx\Template\TwigServiceProvider::class,
 
-
     App\Http\HttpServiceProvider::class
 ];

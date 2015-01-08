@@ -8,12 +8,13 @@ use Phalanx\Contracts\Template\TemplateEnvironment;
 use Phalanx\ErrorHandler\ErrorHandling;
 use Phalanx\Http\HttpException;
 use Phalanx\Router\Routing;
+use Phalanx\Template\Templating;
 use Phalanx\Template\View;
 use Psr\Log\LoggerInterface;
 
 class HttpServiceProvider extends EarlyBootServiceProvider {
 
-    use Routing, ErrorHandling;
+    use Routing, ErrorHandling, Templating;
 
     /**
      * @param Router $router
@@ -27,12 +28,9 @@ class HttpServiceProvider extends EarlyBootServiceProvider {
         ;
     }
 
-    protected function bootingTemplate()
+    protected function templating(TemplateEnvironment $env)
     {
-        /** @var TemplateEnvironment $env */
-        $env = $this->phalanx->make(TemplateEnvironment::class);
         $env->addTemplateDir(__DIR__ . '/../../../template');
-        $env->setCache(false);
     }
 
     /**
