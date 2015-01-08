@@ -4,6 +4,7 @@ use App\Http\Controller\Home;
 use App\Http\Filter\UcFirstName;
 use Phalanx\Booting\EarlyBootServiceProvider;
 use Phalanx\Contracts\Router\Router;
+use Phalanx\Contracts\Template\TemplateEnvironment;
 use Phalanx\ErrorHandler\ErrorHandling;
 use Phalanx\Http\HttpException;
 use Phalanx\Router\Routing;
@@ -24,6 +25,14 @@ class HttpServiceProvider extends EarlyBootServiceProvider {
             ->then(new UcFirstName)
             ->then(Home::class, 'index')
         ;
+    }
+
+    protected function bootingTemplate()
+    {
+        /** @var TemplateEnvironment $env */
+        $env = $this->phalanx->make(TemplateEnvironment::class);
+        $env->addTemplateDir(__DIR__ . '/../../../template');
+        $env->setCache(false);
     }
 
     /**

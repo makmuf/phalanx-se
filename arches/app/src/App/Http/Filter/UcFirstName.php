@@ -8,11 +8,10 @@ use Symfony\Component\HttpFoundation\Response;
 class UcFirstName extends Filter {
 
     /**
-     * @param RouteParameters $parameters
      * @return string|ViewModel|Response
      */
-    public function run(RouteParameters $parameters)
+    public function run()
     {
-        $parameters->set('name' , ucfirst(strtolower($parameters->get('name', 'World'))));
+
     }
 }

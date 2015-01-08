@@ -2,11 +2,11 @@
 
 return [
 
-    'name'   => '',
+    'name'      => 'Phalanx Standard Edition',
 
-    'env'    => 'dev',
+    'env'       => 'dev',
 
-    'debug'  => false,
+    'debug'     => true,
 
     'providers' => [
         Phalanx\Config\ConfigServiceProvider::class,
@@ -16,17 +16,17 @@ return [
         Phalanx\DB\DBServiceProvider::class
     ],
 
-    'http'   => [
+    'http'      => [
         Phalanx\Http\KernelServiceProvider::class,
         Phalanx\Router\RouterServiceProvider::class,
         Phalanx\Template\TwigServiceProvider::class,
         App\Http\HttpServiceProvider::class
     ],
 
-    'console' => [
+    'console'   => [
         PhalanxSDK\PhalanxSDKServiceProvider::class,
         App\Console\ConsoleServiceProvider::class
     ],
 
-    'key'     => 'this is not secure'
+    'key'       => 'this is not secure'
 ];

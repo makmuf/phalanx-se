@@ -6,15 +6,9 @@ use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
 /**
- * @var array $commonServices
- * @var array $consoleServices
  * @var Phalanx $phalanx
  */
-
-$commonServices  = require __DIR__ . '/../config/services.php';
-$consoleServices = require __DIR__ . '/../config/console.php';
-
-$phalanx->loadProviders(array_merge($commonServices, $consoleServices));
+$phalanx->boot('console');
 
 
 /** @var ConsoleKernel $kernel */

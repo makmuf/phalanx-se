@@ -5,12 +5,12 @@ use Phalanx\Foundation\Phalanx;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @var array $commonServices
- * @var array $httpServices
  * @var Phalanx $phalanx
  */
 
-$phalanx->bindShared(Request::class, function() { return Request::createFromGlobals();});
+$phalanx->bindShared(Request::class, function() {
+    return Request::createFromGlobals();
+});
 
 $phalanx->boot('http');
 

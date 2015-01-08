@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controller;
 
+use App\Http\ViewModels\Json;
 use Phalanx\Router\RouteParameters;
-use Phalanx\Template\View;
 
 /**
  * Class Home
@@ -10,11 +10,11 @@ use Phalanx\Template\View;
 class Home {
 
     /**
-     * @param RouteParameters $parameters
-     * @return View
+     * @param string $name
+     * @return Json
      */
-    public function index(RouteParameters $parameters)
+    public function index($name = 'world')
     {
-        return 'Hello ' . $parameters->get('name', 'World');
+        return new Json(['name' => $name]);
     }
 }

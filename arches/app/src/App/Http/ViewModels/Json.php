@@ -15,11 +15,27 @@ class Json implements ViewModel {
     protected $data;
 
     /**
-     * @param array $data
+     * @var int
      */
-    public function __construct(array $data = [])
+    protected $status;
+
+    /**
+     * @var array
+     */
+    protected $headers;
+
+    /**
+     * @param array $data
+     * @param int $status
+     * @param $headers
+     */
+    public function __construct(array $data = [], $status = 200, $headers = [])
     {
         $this->data = $data;
+
+        $this->status = $status;
+
+        $this->headers = array_merge(['Content-Type' => 'application/json'], $headers);
     }
 
     /**
@@ -27,6 +43,6 @@ class Json implements ViewModel {
      */
     public function toResponse()
     {
-        return Response::create(json_encode($this->data), 200, ['Content-Type' => 'application/json']);
+        return Response::create(json_encode($this->data), $this->status, $this->headers);
     }
 }
