@@ -1,7 +1,6 @@
 <?php namespace App\Http\Controller;
 
 use App\Http\ViewModels\Json;
-use Phalanx\Router\RouteParameters;
 
 /**
  * Class Home

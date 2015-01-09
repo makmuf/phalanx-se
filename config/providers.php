@@ -6,7 +6,7 @@ return [
 
     Phalanx\Log\MonoLogServiceProvider::class,
 
-    Phalanx\BCryptHasher\BCryptHasherServiceProvider::class,
+    Phalanx\Hasher\HasherServiceProvider::class,
 
     Phalanx\Filesystem\FilesystemServiceProvider::class,
 
