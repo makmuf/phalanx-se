@@ -2,6 +2,7 @@
 
 use App\Http\ViewModels\Json;
 use Phalanx\Contracts\DB\DB;
+use Phalanx\Contracts\Hash\Hasher;
 use Phalanx\Template\View;
 
 /**
@@ -12,9 +13,12 @@ class Home {
 
     protected $db;
 
-    public function __construct(DB $db)
+    protected $hasher;
+
+    public function __construct(DB $db, Hasher $hasher)
     {
-        $this->db = $db;
+        $this->db     = $db;
+        $this->hasher = $hasher;
     }
 
     /**
@@ -23,6 +27,9 @@ class Home {
      */
     public function index($name = 'world')
     {
-        return new View('hello', ['name' => $name]);
+        return new Json([
+            'name'  => $name,
+            'token' => $this->hasher->algorithm()->hash('xxx')
+        ]);
     }
 }
