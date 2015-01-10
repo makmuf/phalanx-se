@@ -2,9 +2,11 @@
 
 return [
 
-    'algorithm'       => [
+    'algorithms' => [
 
-        'bcrypt'    => [ 'cost'  => 10 ],
+        'bcrypt' => [
+            'cost' => 10
+        ],
 
     ],
 
