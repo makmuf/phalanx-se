@@ -1,7 +1,7 @@
 <?php namespace App\Console\Commands;
 
 use Phalanx\Contracts\Hash;
-use Phalanx\Contracts\Proxy\Proxier;
+use Phalanx\Contracts\Hub\Thread;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Class Hello
  * @package CloudOffice\Console\Commands
  */
-class Hello extends Command implements Proxier {
+class Hello extends Command implements Thread {
 
     /**
      * {@inheritDocs}
