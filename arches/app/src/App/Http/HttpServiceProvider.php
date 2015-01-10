@@ -30,7 +30,7 @@ class HttpServiceProvider extends EarlyBootServiceProvider {
 
     protected function templating(TemplateEnvironment $env)
     {
-        $env->addTemplateDir(__DIR__ . '/../../../template');
+        $env->addTemplatePath(__DIR__ . '/../../../template');
     }
 
     /**
