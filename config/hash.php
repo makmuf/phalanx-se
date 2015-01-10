@@ -2,7 +2,7 @@
 
 return [
 
-    'drivers'       => [
+    'algorithm'       => [
 
         'bcrypt'    => [ 'cost'  => 10 ],
 
