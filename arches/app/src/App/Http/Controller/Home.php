@@ -1,7 +1,8 @@
 <?php namespace App\Http\Controller;
 
 use App\Http\ViewModels\Json;
-use Phalanx\Contracts\Config\Config;
+use Phalanx\Contracts\DB\DB;
+use Phalanx\Template\View;
 
 /**
  * Class Home
@@ -9,11 +10,11 @@ use Phalanx\Contracts\Config\Config;
  */
 class Home {
 
-    protected $config;
+    protected $db;
 
-    public function __construct(Config $config)
+    public function __construct(DB $db)
     {
-        $this->config = $config;
+        $this->db = $db;
     }
 
     /**
@@ -22,6 +23,6 @@ class Home {
      */
     public function index($name = 'world')
     {
-        return new Json($this->config->dump());
+        return new View('hello', ['name' => $name]);
     }
 }
