@@ -3,6 +3,7 @@
     "description": "Phalanx Standard Edition. Skeleton for a Phalanx web application",
     "require": {
         "php": ">=5.5",
+        "phalanx/cache": "dev-master",
         "phalanx/hasher": "dev-master",
         "phalanx/config": "dev-master",
         "phalanx/console": "dev-master",
