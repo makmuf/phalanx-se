@@ -32,6 +32,6 @@ class Hello extends Command implements Thread {
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Hello ' . ucfirst(strtolower($input->getArgument('name'))));
+        $output->writeln('<info>Hello ' . ucfirst(strtolower($input->getArgument('name'))) . '</info> <comment>from Phalanx</comment>');
     }
 }
