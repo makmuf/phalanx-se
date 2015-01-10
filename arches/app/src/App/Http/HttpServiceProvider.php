@@ -2,7 +2,8 @@
 
 use App\Http\Controller\Home;
 use App\Http\Filter\UcFirstName;
-use Phalanx\Booting\EarlyBootServiceProvider;
+use Phalanx\Booting\BootingServiceProvider;
+use Phalanx\Booting\EarlyBoot;
 use Phalanx\Contracts\Router\Router;
 use Phalanx\Contracts\Template\TemplateEnvironment;
 use Phalanx\ErrorHandler\ErrorHandling;
@@ -12,8 +13,9 @@ use Phalanx\Template\Templating;
 use Phalanx\Template\View;
 use Psr\Log\LoggerInterface;
 
-class HttpServiceProvider extends EarlyBootServiceProvider {
+class HttpServiceProvider extends BootingServiceProvider {
 
+    use EarlyBoot;
     use Routing, ErrorHandling, Templating;
 
     /**

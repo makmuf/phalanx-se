@@ -6,7 +6,6 @@ return [
 
     Phalanx\Router\RouterServiceProvider::class,
 
-    Phalanx\Template\TwigServiceProvider::class,
+    Phalanx\Template\TwigServiceProvider::class
 
-    App\Http\HttpServiceProvider::class
 ];
