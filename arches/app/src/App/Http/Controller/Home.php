@@ -1,8 +1,5 @@
 <?php namespace App\Http\Controller;
 
-use App\Http\ViewModels\Json;
-use Phalanx\Contracts\DB\DB;
-use Phalanx\Contracts\Hash\Hasher;
 use Phalanx\Template\View;
 
 /**
@@ -11,19 +8,9 @@ use Phalanx\Template\View;
  */
 class Home {
 
-    protected $db;
-
-    protected $hasher;
-
-    public function __construct(DB $db, Hasher $hasher)
-    {
-        $this->db     = $db;
-        $this->hasher = $hasher;
-    }
-
     /**
      * @param string $name
-     * @return Json
+     * @return View
      */
     public function index($name = 'world')
     {
