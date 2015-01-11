@@ -35,8 +35,8 @@
     "minimum-stability": "dev",
     "scripts": {
         "post-install-cmd": [
-            "php bin/falanx key:generate",
-            "echo \"<?php require_once __DIR__ . '/vendor/autoload.php'; \" > ./autoload.php"
+            "echo \"<?php require_once __DIR__ . '/vendor/autoload.php'; \" > ./autoload.php",
+            "php bin/falanx key:generate"
         ]
     }
 }
