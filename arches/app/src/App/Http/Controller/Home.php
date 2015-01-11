@@ -27,9 +27,6 @@ class Home {
      */
     public function index($name = 'world')
     {
-        return new Json([
-            'name'  => $name,
-            'token' => $this->hasher->algorithm()->hash('xxx')
-        ]);
+        return new View('hello', ['name' => $name]);
     }
 }

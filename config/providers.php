@@ -12,4 +12,6 @@ return [
 
     Phalanx\DB\DBServiceProvider::class,
 
+    Phalanx\Cache\CacheManagerServiceProvider::class
+
 ];
