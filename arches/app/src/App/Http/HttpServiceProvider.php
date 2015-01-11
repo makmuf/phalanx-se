@@ -4,6 +4,7 @@ use App\Http\Controller\Home;
 use App\Http\Filter\UcFirstName;
 use Phalanx\Booting\BootingServiceProvider;
 use Phalanx\Booting\EarlyBoot;
+use Phalanx\Contracts\Log\Log;
 use Phalanx\Contracts\Router\Router;
 use Phalanx\Contracts\Template\TemplateEnvironment;
 use Phalanx\ErrorHandler\ErrorHandling;
@@ -11,7 +12,6 @@ use Phalanx\Http\HttpException;
 use Phalanx\Router\Routing;
 use Phalanx\Template\Templating;
 use Phalanx\Template\View;
-use Psr\Log\LoggerInterface;
 
 class HttpServiceProvider extends BootingServiceProvider {
 
@@ -30,6 +30,9 @@ class HttpServiceProvider extends BootingServiceProvider {
         ;
     }
 
+    /**
+     * @param TemplateEnvironment $env
+     */
     protected function templating(TemplateEnvironment $env)
     {
         $env->addTemplatePath(__DIR__ . '/../../../template');
@@ -41,9 +44,9 @@ class HttpServiceProvider extends BootingServiceProvider {
      */
     protected function error(\Exception $exception)
     {
-        /**@var LoggerInterface $logger*/
-        $logger = $this->phalanx->make(LoggerInterface::class);
-        $logger->error(
+        /**@var Log $logger*/
+        $logger = $this->phalanx->make(Log::class);
+        $logger->chanel('system')->error(
             $exception->getMessage(),
             $exception->getTrace()
         );
@@ -57,13 +60,6 @@ class HttpServiceProvider extends BootingServiceProvider {
      */
     protected function notFound(HttpException $exception)
     {
-        /**@var LoggerInterface $logger*/
-        $logger = $this->phalanx->make(LoggerInterface::class);
-        $logger->notice(
-            $exception->getMessage(),
-            $exception->getTrace()
-        );
-
         return new View('notfound', [], 404);
     }
 }
