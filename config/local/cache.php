@@ -4,9 +4,11 @@ return [
 
     'pools' => [
 
-        'my-pool' => [
+        'null-pool' => [
             'adapter' => 'null'
         ],
 
     ],
+
+    'default' => 'null-pool'
 ];
