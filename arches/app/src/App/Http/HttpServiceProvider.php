@@ -8,7 +8,6 @@ use Phalanx\Contracts\Log\Log;
 use Phalanx\Contracts\Router\Router;
 use Phalanx\Contracts\Template\TemplateEnvironment;
 use Phalanx\ErrorHandler\ErrorHandling;
-use Phalanx\Http\HttpException;
 use Phalanx\Router\Routing;
 use Phalanx\Template\Templating;
 use Phalanx\Template\View;
