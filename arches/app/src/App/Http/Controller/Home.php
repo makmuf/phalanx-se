@@ -1,12 +1,20 @@
 <?php namespace App\Http\Controller;
 
 use Phalanx\Template\View;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class Home
- * @package CloudOffice\Http\Controller
+ * @package App\Http\Controller
  */
 class Home {
+
+    protected $request;
+
+    public function __construct(Request $request)
+    {
+        $this->request = $request;
+    }
 
     /**
      * @param string $name
