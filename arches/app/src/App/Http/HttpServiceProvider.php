@@ -55,10 +55,9 @@ class HttpServiceProvider extends BootingServiceProvider {
     }
 
     /**
-     * @param HttpException $exception
      * @return View
      */
-    protected function notFound(HttpException $exception)
+    protected function notFound()
     {
         return new View('notfound', [], 404);
     }
