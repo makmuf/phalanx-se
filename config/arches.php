@@ -1,5 +1,5 @@
 <?php return [
 
-    'app'
+    'app', 'test-arch'
 
 ];
